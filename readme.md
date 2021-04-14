@@ -2,7 +2,7 @@
 
 ### 4.14
 
-* 更新github目录：Doc中存放文档，Katana为游戏目录
+* 更新github目录：Doc中存放文档，Assets/Katana为游戏目录
 
   * Art
     * Animation
@@ -12,8 +12,6 @@
   * Prefab
   * Scene
   * Script
-
-  将Katana放在Assets下即可
 
 * 更新对话系统
 
