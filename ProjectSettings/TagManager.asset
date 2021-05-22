@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
+  - Prop
   - Enemy
   layers:
   - Default
@@ -14,13 +16,13 @@ TagManager:
   - UI
   - 
   - 
-  - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - Player
+  - Props
+  - Ground
+  - Foreground
+  - Enemies
+  - BackgroundImage
   - 
   - 
   - 
@@ -42,12 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 293559885
-    locked: 0
   - name: Background
-    uniqueID: 4284889769
+    uniqueID: 2719126939
     locked: 0
-  - name: Enemy
-    uniqueID: 2005919487
+  - name: Ground
+    uniqueID: 3592164763
+    locked: 0
+  - name: Player
+    uniqueID: 2159540611
+    locked: 0
+  - name: Foreground
+    uniqueID: 2825515741
     locked: 0
