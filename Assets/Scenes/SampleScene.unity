@@ -477,7 +477,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5872,7 +5871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0006389618, y: 7.526243, z: -20}
+  m_LocalPosition: {x: 0.00063705444, y: 7.52474, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7302,6 +7301,7 @@ GameObject:
   - component: {fileID: 1426733434}
   - component: {fileID: 1426733435}
   - component: {fileID: 1426733436}
+  - component: {fileID: 1426733437}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -7616,6 +7616,34 @@ MonoBehaviour:
   regenDelay: 0.03
   regenAmount: 1
   HealthPotion: 20
+--- !u!114 &1426733437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426733420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcfb460658436c4d9cf3b07cb4f81ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 258299026209727350, guid: 182228c461d0fed498d2bb9246106642,
+    type: 3}
+  dupPrefab: {fileID: 1696618520890452757, guid: 80dde339f6593e54f8d4b79796be86b9,
+    type: 3}
+  pool: {fileID: 0}
+  bulletTime: 0
+  bullet_time_length: 1
+  bullet_time_remain: 1
+  bullet_time_cd: 5
+  bullet_time_cd_remain: 0
+  duplicate_time_length: 5
+  duplicate_time_remain: 5
+  duplicate_time_cd: 3
+  duplicate_time_cd_remain: 0
+  have_duplicate: 0
+  duplicate_pos: {x: 0, y: 0}
 --- !u!1 &1435044083
 GameObject:
   m_ObjectHideFlags: 0
@@ -8452,7 +8480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796466700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 2.18, z: 0}
+  m_LocalPosition: {x: 6.64, y: 2.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533080155}

@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Prop
   - Enemy
+  - Bullet
+  - Dup
   layers:
   - Default
   - TransparentFX
