@@ -9,10 +9,10 @@ public class FlyerController : Enemy
     [SerializeField] public float attackRadius;//攻击距离
     [SerializeField] public float attackInterval;//攻击间隔
 
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] Animator myAnimator;
-    [SerializeField] private bool finding;//是否找到玩家
-    [SerializeField] private float myAttackTimer;
+    private Transform playerTransform;
+    Animator myAnimator;
+    private bool finding;//是否找到玩家
+    private float myAttackTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class FlyerController : Enemy
         base.FixedUpdate();
         SearchPlayer();
         
-        //myAttackTimer = Time.deltaTime;
+        myAttackTimer += Time.deltaTime;
 
 
     }
@@ -37,8 +37,8 @@ public class FlyerController : Enemy
         if (playerTransform != null)
         {
             float distance = Vector3.Distance(transform.position, playerTransform.position);
-            Debug.Log("Dist Vector:" + (transform.position - playerTransform.position).ToString());
-            Debug.Log("distance:" + distance.ToString());
+            //Debug.Log("Dist Vector:" + (transform.position - playerTransform.position).ToString());
+            //Debug.Log("distance:" + distance.ToString());
             
             if (distance <= attackRadius)
             {
@@ -46,7 +46,7 @@ public class FlyerController : Enemy
             }
             else if(distance <= searchRadius)
             {
-                Debug.Log("find you");
+                //Debug.Log("find you");
                 myAnimator.SetBool("Tracking",true);
                 transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
                 finding = true;
@@ -56,13 +56,13 @@ public class FlyerController : Enemy
 
     void Attack()
     {
-        /*
+        
         if (myAttackTimer >= attackInterval)
         {
-            Debug.Log("Attack");
+            myAttackTimer = 0f;
+            //Debug.Log("Attack");
             myAnimator.SetBool("Attack",true);
-        }*/
-        myAnimator.SetBool("Attack", true);
+        }
     }
     void OnDrawGizmos()
     {
