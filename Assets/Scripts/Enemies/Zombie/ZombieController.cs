@@ -85,7 +85,7 @@ public class ZombieController : MonoBehaviour
     {
         //检测与目标的距离
         float sqrDistance = Vector3.Distance(transform.position , myTarget.position);
-        Debug.Log("zombie distance" + sqrDistance.ToString());
+        //Debug.Log("zombie distance" + sqrDistance.ToString());
         //检测是否在攻击范围内
         if(sqrDistance <= attackRadius)
         {
