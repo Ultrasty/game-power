@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Bullet
   - Dup
+  - Map
+  - Pickable
   layers:
   - Default
   - TransparentFX

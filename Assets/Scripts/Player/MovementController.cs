@@ -17,6 +17,7 @@ public class MovementController : MonoBehaviour
   private FiniteStateMachine fsm;
   private bool facingRight = true;
   private bool onGround;
+    private bool bulletTime = false;
 
   private void Start()
   {
@@ -33,6 +34,7 @@ public class MovementController : MonoBehaviour
   }
   private void FixedUpdate()
   {
+    changeSpeed();
     if(direction.x != 0 && fsm.state != FiniteStateMachine.State.rolling  && fsm.state != FiniteStateMachine.State.attacking)
     {
       Move();
@@ -82,4 +84,20 @@ public class MovementController : MonoBehaviour
     transform.localScale = new Vector2(Mathf.Sign(direction.x), transform.localScale.y);
   }
 
+  private void changeSpeed()
+    {
+        GameObject self_ob = GameObject.FindGameObjectWithTag("Player");
+        if(self_ob.GetComponent<CharacterController2D>().bulletTime&& (!bulletTime))
+        {
+            bulletTime = true;
+            walkSpeed *= 3;
+            runSpeed *= 3;
+        }
+        else if (!self_ob.GetComponent<CharacterController2D>().bulletTime && (bulletTime))
+        {
+            bulletTime = false;
+            walkSpeed /= 3;
+            runSpeed /= 3;
+        }
+    }
 }
