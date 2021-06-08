@@ -8,11 +8,14 @@ public class FlyerController : Enemy
     [SerializeField] public float searchRadius;
     [SerializeField] public float attackRadius;//攻击距离
     [SerializeField] public float attackInterval;//攻击间隔
+    [SerializeField] public bool destroyable = true;
+    [SerializeField] public float attackDamage = 1.0f;
 
     private Transform playerTransform;
     Animator myAnimator;
     private bool finding;//是否找到玩家
     private float myAttackTimer;
+    private FlyerAttack myAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,7 @@ public class FlyerController : Enemy
             
             if (distance <= attackRadius)
             {
+                //myAttack.Attack();
                 Attack();
             }
             else if(distance <= searchRadius)
@@ -53,7 +57,7 @@ public class FlyerController : Enemy
             }
         }
     }
-
+    
     void Attack()
     {
         
@@ -70,5 +74,19 @@ public class FlyerController : Enemy
         Gizmos.DrawWireSphere(transform.position, searchRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
+    }
+    private void TakeDamage()
+    {
+
+        if (destroyable)
+        {
+            HealthPoints -= 1;
+        }
+
+        if (HealthPoints <= 0)
+        {
+            Destroy(gameObject);
+            myAnimator.SetBool("Die", true);
+        }
     }
 }
