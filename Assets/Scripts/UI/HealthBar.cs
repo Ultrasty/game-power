@@ -32,7 +32,8 @@ public class HealthBar : MonoBehaviour
     currentHealth = maxHealth;      // inicializa a barra com a stamina cheia
     healthBar.maxValue = maxHealth; // configura o valor maximo da barra
     healthBar.value = maxHealth;    // atualiza o preenchimento da barra
-  }
+        
+    }
 
   private void Update()
   {
@@ -56,6 +57,12 @@ public class HealthBar : MonoBehaviour
   public void TakeDamage(float amount)
   {
       // Verifica se tem vida suficiente para realizar a acao
+      if(player.GetComponent<FiniteStateMachine>().state == FiniteStateMachine.State.blocking)
+        {
+            
+            return;
+        }
+      
       if(currentHealth > 0)
       {
         currentHealth -= amount; // reduz a qtd usada da vida atual

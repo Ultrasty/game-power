@@ -7,8 +7,10 @@ public class AttackController : MonoBehaviour
   [Header("Combo Parameters")]
    // how much room until next click to continue combo
   [Range(0f, 2f)] [SerializeField] private float maxComboDelay = 0.5f;
-  [SerializeField] private float lastClickedTime = 0;
-  [SerializeField] private int numberOfClicks = 0;
+    [Range(0f, 0.5f)] [SerializeField] private float maxBlockDelay = 0.1f;
+    [SerializeField] private float lastClickedTime = 0;
+    [SerializeField] private float lastBlockedTime = 0;
+    [SerializeField] private int numberOfClicks = 0;
   
   [Header("Weak Attack Parameters")]
   [Range(1f, 120f)] [SerializeField] private float motionPerAttack = 100f;
@@ -17,11 +19,15 @@ public class AttackController : MonoBehaviour
   [SerializeField] private LayerMask hittableLayers;
   
   // [Header("Components")]
+  public bool is_block= false;
+    public bool is_attack = false;
   private FiniteStateMachine fsm;
   private StaminaBar staminaBar;
   private Rigidbody2D rb;
   private Animator anim;
-  
+    
+
+
   private void Start()
   {
     fsm = GetComponent<FiniteStateMachine>();
@@ -33,19 +39,62 @@ public class AttackController : MonoBehaviour
 
   private void Update()
   {
-    // Checks if the next click is within the chain time, which will proceed the combo
-    if(Time.time - lastClickedTime > maxComboDelay)
-    {
-      numberOfClicks = 0;
-    }
-    // key listener to mouse1/fireButton/MouseLeftClick as you wanna call it
-    if(Input.GetMouseButtonDown(0))
-    {
-      // Call the combo manager which will identify what animation will be played
-      Combo();
-    }
+        if (!is_block)
+        // Checks if the next click is within the chain time, which will proceed the combo
+        {
+            if (Time.time - lastClickedTime > maxComboDelay)
+            {
+                numberOfClicks = 0;
+            }
+            if(!is_attack)
+            {
+                if(Input.GetMouseButtonDown(1))
+                {
+                 
+                    is_block = true;
+                    numberOfClicks = 0;
+                    Block();
+                }
+            }
+            else
+            {
+                if(Time.time-lastClickedTime>maxBlockDelay)
+                {
+                    is_attack = false;
+                }
+            }
+            // key listener to mouse1/fireButton/MouseLeftClick as you wanna call it
+            if (Input.GetMouseButtonDown(0))
+            {
+                // Call the combo manager which will identify what animation will be played
+                is_attack = true;
+                Combo();
+            }
+        }
+        else
+        {
+            if(Time.time-lastBlockedTime>maxBlockDelay)
+            {
+                is_block = false;
+            }
+        }
   }
-  
+  private void Block()
+    {
+        if (staminaBar.EnoughStamina())
+        {
+            rb.velocity = new Vector2(0, 0);
+            fsm.state = FiniteStateMachine.State.blocking;
+            anim.SetInteger("state", 10);
+            //audioSource.Play();
+            lastBlockedTime = Time.time; // get current time // increase clicks counter
+        }
+
+        else
+        {
+            is_block = false;
+        }
+    }
   // responsible for the stamina verification and consuption
   private int staminaUse(float amount)
   {
@@ -79,6 +128,7 @@ public class AttackController : MonoBehaviour
     }
     else
     {
+            is_attack = false;
       numberOfClicks = 0;
     }
   }

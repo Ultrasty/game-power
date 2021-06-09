@@ -16,7 +16,7 @@ public class FiniteStateMachine : MonoBehaviour
     [SerializeField] private int mortalSpeed;
     
     [HideInInspector] public enum State {idle, walking, running, jumping, falling,
-                      landing, attacking, rolling, climbing, emptyState, shooting, blocking};
+                      landing, attacking, rolling, climbing, emptyState, blocking};
                       
     [HideInInspector] public enum Landing {low, high, death};
     [HideInInspector] public Landing landStyle = Landing.low;
@@ -76,8 +76,12 @@ public class FiniteStateMachine : MonoBehaviour
       {
         rb.velocity = new Vector2(0, 0);
       }
-      // rolling
-      else if(state == State.rolling)
+        else if (state == State.blocking)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+        // rolling
+        else if(state == State.rolling)
       {
         // rb.velocity = new Vector2(0, 0);
         Debug.Log("FSM Roll");
