@@ -14,8 +14,8 @@ public class ActWith : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         interactables = GameObject.FindGameObjectsWithTag("Interactable");
-        height = player.GetComponent<Collider2D>().bounds.size.y;
-        width = player.GetComponent<Collider2D>().bounds.size.x;
+        height = player.GetComponent<Collider2D>().bounds.size.y/2;
+        width = player.GetComponent<Collider2D>().bounds.size.x/2;
 
     }
 
@@ -24,7 +24,6 @@ public class ActWith : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            interactables = GameObject.FindGameObjectsWithTag("Interactable");
             int length = interactables.Length;
             for(int i=0;i<length;i++)
             {
@@ -42,7 +41,7 @@ public class ActWith : MonoBehaviour
         }
     }
 
-    public void interactable_update()
+    void interactable_update()
     {
         interactables = GameObject.FindGameObjectsWithTag("Interactable");
     }

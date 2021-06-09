@@ -13,8 +13,6 @@ public class FlyerController : Enemy
     [SerializeField] public GameObject collectObject;
 
     [SerializeField] private Transform playerTransform;
-    GameObject player;
-    public GameObject portal;
     Animator myAnimator;
     private bool finding;//是否找到玩家
     private float myAttackTimer;
@@ -22,7 +20,6 @@ public class FlyerController : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         base.Start();
         myAnimator = GetComponent<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -95,9 +92,5 @@ public class FlyerController : Enemy
             Destroy(gameObject);
             Instantiate(collectObject, transform.position, Quaternion.identity);
         }
-    }
-    private void OnDestroy()
-    {
-        portal.SetActive(true);
     }
 }
