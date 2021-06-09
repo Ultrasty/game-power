@@ -117,7 +117,7 @@ public class DogController : MonoBehaviour
   private void Die()
   {
     anim.SetBool("IsDead", true);
-        Instantiate(collectObject, transform.position, Quaternion.identity);
+    Instantiate(collectObject, transform.position, Quaternion.identity);
     GetComponent<Collider2D>().enabled = false;
     rb.gravityScale = 0;
     rb.velocity = new Vector2(0,0);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public int health;
+    public int HealthPoints;
     public int damage;
     public float flashTime;
 
@@ -23,17 +23,6 @@ public abstract class Enemy : MonoBehaviour
     // Update is called once per frame
     public void FixedUpdate()
     {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        FlashColor(flashTime);
-        //Instantiate(bloodEffect, transform.position, Quaternion.identity);
-        //GameController.camShake.Shake();
     }
 
     //受伤红光闪烁时间time

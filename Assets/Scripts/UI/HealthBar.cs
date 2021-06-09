@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -16,11 +17,17 @@ public class HealthBar : MonoBehaviour
   // micro delay no recharge rate
   private WaitForSeconds regenTick;
   private float currentHealth;
-  // processo de regeneracao
-  private Coroutine regen;
+    Scene scene;
+    // processo de regeneracao
+    private Coroutine regen;
+    private GameObject player;
+    Vector2 start_point;
   
   private void Start()
   {
+    player = GameObject.FindGameObjectWithTag("Player");
+        scene = SceneManager.GetActiveScene();
+        start_point = player.transform.position;
     regenTick = new WaitForSeconds(regenDelay);
     currentHealth = maxHealth;      // inicializa a barra com a stamina cheia
     healthBar.maxValue = maxHealth; // configura o valor maximo da barra
@@ -52,7 +59,12 @@ public class HealthBar : MonoBehaviour
       if(currentHealth > 0)
       {
         currentHealth -= amount; // reduz a qtd usada da vida atual
-        healthBar.value = currentHealth;  // atualiza o valor na barra
+        healthBar.value = currentHealth; 
+        if(currentHealth<=0)
+            {
+                dead();
+            }
+            // atualiza o valor na barra
       }
   }
 
@@ -72,5 +84,11 @@ public class HealthBar : MonoBehaviour
       yield return regenTick;
     }
     regen = null;
+  }
+
+  private void dead()
+  {
+        //player.transform.position = start_point;
+        SceneManager.LoadScene(scene.name);
   }
 }

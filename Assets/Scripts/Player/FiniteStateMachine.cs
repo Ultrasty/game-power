@@ -16,7 +16,7 @@ public class FiniteStateMachine : MonoBehaviour
     [SerializeField] private int mortalSpeed;
     
     [HideInInspector] public enum State {idle, walking, running, jumping, falling,
-                      landing, attacking, rolling, climbing, emptyState};
+                      landing, attacking, rolling, climbing, emptyState, shooting, blocking};
                       
     [HideInInspector] public enum Landing {low, high, death};
     [HideInInspector] public Landing landStyle = Landing.low;
