@@ -25,7 +25,7 @@ public class enemyBullet : MonoBehaviour
 
         Instantiate(impactEffect, transform.position, transform.rotation);
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 }
