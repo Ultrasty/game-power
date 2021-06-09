@@ -21,11 +21,18 @@ public class HealthBar : MonoBehaviour
     // processo de regeneracao
     private Coroutine regen;
     private GameObject player;
+    Renderer rend;
+    Color color;
+    private int blink_time = 50;
+    private int current_blink = 50;
+    bool is_damage = false;
     Vector2 start_point;
   
   private void Start()
   {
     player = GameObject.FindGameObjectWithTag("Player");
+        rend = player.GetComponent<Renderer>();
+        color = rend.material.color;
         scene = SceneManager.GetActiveScene();
         start_point = player.transform.position;
     regenTick = new WaitForSeconds(regenDelay);
@@ -37,7 +44,25 @@ public class HealthBar : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.G)){
+        if (is_damage)
+        {
+            if (current_blink % 6 <= 4)
+            {
+                rend.material.color = Color.red;
+            }
+            else
+            {
+                rend.material.color = color;
+            }
+
+            current_blink -= 1;
+            if (current_blink <= 4)
+            {
+                is_damage = false;
+                current_blink = blink_time;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.G)){
       // Condicional necessaria para que exista o delay apos o uso da stamina
       if(regen != null) // se a regeneracao ja foi inicializada
       {
@@ -56,8 +81,9 @@ public class HealthBar : MonoBehaviour
 
   public void TakeDamage(float amount)
   {
-      // Verifica se tem vida suficiente para realizar a acao
-      if(player.GetComponent<FiniteStateMachine>().state == FiniteStateMachine.State.blocking)
+        
+        // Verifica se tem vida suficiente para realizar a acao
+        if (player.GetComponent<FiniteStateMachine>().state == FiniteStateMachine.State.blocking)
         {
             
             return;
@@ -66,7 +92,8 @@ public class HealthBar : MonoBehaviour
       if(currentHealth > 0)
       {
         currentHealth -= amount; // reduz a qtd usada da vida atual
-        healthBar.value = currentHealth; 
+        healthBar.value = currentHealth;
+            is_damage = true;
         if(currentHealth<=0)
             {
                 dead();
