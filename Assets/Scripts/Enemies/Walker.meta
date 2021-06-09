@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Enemies/Walker.meta
 guid: 48a68e18e0dab4244bfcaf3d2adc35aa
+=======
+guid: cdca38e2c604b904e96cbf9d26a89c46
+>>>>>>> fa07b3500d4a909c36c07b8dd5b5e1d37e8efbf2:Assets/Materials/Enviroment.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
