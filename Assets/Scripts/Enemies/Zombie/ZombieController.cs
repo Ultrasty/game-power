@@ -15,7 +15,7 @@ public class ZombieController : MonoBehaviour
 
     public Damager attackDamager;
 
-    Transform myTarget;
+    Transform myTarget=null;
 
     float myAttackTimer;
     Vector2 myPatrolStart;//巡逻起点
