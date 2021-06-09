@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class BoyNextDoor : MonoBehaviour
+public class SampleScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +15,9 @@ public class BoyNextDoor : MonoBehaviour
     {
         
     }
-    private void Interact()
+
+    public void Interact()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("asda");
     }
 }

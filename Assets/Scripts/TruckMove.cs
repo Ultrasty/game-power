@@ -16,8 +16,9 @@ public class TruckMove : MonoBehaviour
     {
         
     }
-    void activateTruck()
+    public void Interact()
     {
         anim.SetBool("isTruck", true);
     }
+
 }

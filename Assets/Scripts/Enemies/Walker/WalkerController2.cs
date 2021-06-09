@@ -27,7 +27,7 @@ public class WalkerController2 : MonoBehaviour
     Animator myAnimator;
     Rigidbody2D myRigidbody2D;
     SpriteRenderer MySpriteRenderer;
-    private Transform playerTransform;//玩家transform
+    [SerializeField] private Transform playerTransform;//玩家transform
     private float distance;//与玩家距离
     private bool movingRight = true;
 
