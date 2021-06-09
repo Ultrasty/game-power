@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
 
     private SpriteRenderer sr;
     private Color originalColor;
+    private Rigidbody2D rb;
     //private PlayerHealth playerHealth;
     // Start is called before the first frame update
     public void Start()
@@ -18,13 +19,23 @@ public abstract class Enemy : MonoBehaviour
         //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
+        rb = GetComponent<Rigidbody2D>();   //获取刚体组件
     }
 
     // Update is called once per frame
     public void FixedUpdate()
     {
+        Flip();
     }
 
+    void Flip()
+    {
+        float faceDir = Input.GetAxisRaw("Horizontal");
+        if (faceDir != 0)
+        {
+             transform.localScale = new Vector3(faceDir,1,1);
+        } 
+    }
     //受伤红光闪烁时间time
     void FlashColor(float time)
     {
@@ -35,14 +46,5 @@ public abstract class Enemy : MonoBehaviour
     void ResetColor()
     {
         sr.color = originalColor;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //检测是否碰撞到玩家
-        if (other.gameObject.CompareTag("Player") && other.GetType().ToString()== "UnityEngine.CapsuleCollider2D")
-        {
-            
-        }
     }
 }

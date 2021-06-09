@@ -10,6 +10,7 @@ public class FlyerController : Enemy
     [SerializeField] public float attackInterval;//攻击间隔
     [SerializeField] public bool destroyable = true;
     [SerializeField] public float attackDamage = 1.0f;
+    public GameObject collectObject;
 
     private Transform playerTransform;
     Animator myAnimator;
@@ -85,8 +86,9 @@ public class FlyerController : Enemy
 
         if (HealthPoints <= 0)
         {
-            Destroy(gameObject);
             myAnimator.SetBool("Die", true);
+            Destroy(gameObject);
+            Instantiate(collectObject, transform.position, Quaternion.identity);
         }
     }
 }
