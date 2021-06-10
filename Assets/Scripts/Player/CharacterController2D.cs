@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class CharacterController2D : MonoBehaviour
 {
-
+    public Image time_mask;
+    public Image dup_mask;
     public GameObject bulletPrefab;
     public GameObject dupPrefab;
 
@@ -54,9 +56,11 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
+
         if(have_duplicate)
         {
             duplicate_time_remain -= Time.deltaTime;
+            dup_mask.fillAmount = (duplicate_time_length-duplicate_time_remain) / duplicate_time_length;
             if(duplicate_time_remain<=0||Input.GetKeyDown(KeyCode.C))
             {
                 Destroy(GameObject.FindGameObjectWithTag("Dup"));
@@ -68,8 +72,11 @@ public class CharacterController2D : MonoBehaviour
         }
         else
         {
-            if (duplicate_time_cd_remain >= 0)
+            if (duplicate_time_cd_remain > 0)
+            { 
                 duplicate_time_cd_remain -= Time.deltaTime;
+                dup_mask.fillAmount = duplicate_time_cd_remain / duplicate_time_cd;
+            }
             if(Input.GetKeyDown(KeyCode.C))
             {
                 have_duplicate = true;
@@ -82,6 +89,7 @@ public class CharacterController2D : MonoBehaviour
         if(bulletTime)
         {
             bullet_time_remain -= Time.deltaTime;
+            time_mask.fillAmount = (bullet_time_length-bullet_time_remain) / bullet_time_length;
             if (Input.GetKeyDown(KeyCode.Z) || bullet_time_remain <= 0)
             {
                 Time.timeScale = 1f;
@@ -95,10 +103,14 @@ public class CharacterController2D : MonoBehaviour
         else
         {
             if (bullet_time_remain <= bullet_time_length)
+            { 
                 bullet_time_remain += 2 * Time.deltaTime;
+                time_mask.fillAmount = (bullet_time_length-bullet_time_remain) / bullet_time_length;
+            }
             if(bullet_time_cd_remain>=0)
             {
                 bullet_time_cd_remain -= Time.deltaTime;
+                time_mask.fillAmount = bullet_time_cd_remain / bullet_time_cd;
             }
             else
             {
