@@ -124,21 +124,4 @@ public class DogController : MonoBehaviour
     this.enabled = false;
     Destroy(this);
   }
-    /*
-    //随机掉落子弹或者草莓
-    public void RandomDrop()
-    {
-        //草莓与子弹掉落概率为1：2。12~19生成草莓，20~31生成子弹，
-        int num = (int)(Random.Range(12, 31) / 10);
-        if (num % 2 == 0&& num % 2 == 1)
-        {
-            Debug.Log("生成樱桃");
-            collectObject = Instantiate(Resources.Load("/Assets/Prefab/Enviroment/Props/Cherry"), gameObject.transform.position, Quaternion.identity) as GameObject;
-        }
-        
-        if (num % 2 == 1)
-        {
-            collectObject = Instantiate(Resources.Load("Prefab/CollectibleHealth"), gameObject.transform.position, Quaternion.identity) as GameObject;
-        }
-    }*/
 }

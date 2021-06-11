@@ -30,11 +30,19 @@ public abstract class Enemy : MonoBehaviour
 
     void Flip()
     {
-        float faceDir = Input.GetAxisRaw("Horizontal");
-        if (faceDir != 0)
+        bool HasXAxisSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        if(HasXAxisSpeed)
         {
-             transform.localScale = new Vector3(faceDir,1,1);
-        } 
+            if(rb.velocity.x > 0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+
+            if (rb.velocity.x < -0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
     }
     //受伤红光闪烁时间time
     void FlashColor(float time)
