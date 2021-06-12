@@ -13,9 +13,13 @@ public class HealthBar : MonoBehaviour
   [Range(0f, 1f)] [SerializeField] private float regenDelay;
   [Range(0f, 10f)] [SerializeField] private float regenAmount;
   [SerializeField] private float HealthPotion;
+    public GameObject death_UI;
+    public float death_time_remain = 3f;
+    private bool is_dead = false;
+    public AudioSource dead_audio;
 
-  // micro delay no recharge rate
-  private WaitForSeconds regenTick;
+    // micro delay no recharge rate
+    private WaitForSeconds regenTick;
   private float currentHealth;
     Scene scene;
     // processo de regeneracao
@@ -30,7 +34,8 @@ public class HealthBar : MonoBehaviour
   
   private void Start()
   {
-    player = GameObject.FindGameObjectWithTag("Player");
+        death_UI.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
         rend = player.GetComponent<Renderer>();
         color = rend.material.color;
         scene = SceneManager.GetActiveScene();
@@ -44,6 +49,12 @@ public class HealthBar : MonoBehaviour
 
   private void Update()
   {
+        if (is_dead)
+        {
+            death_time_remain -= Time.deltaTime;
+            if (death_time_remain <= 0)
+                SceneManager.LoadScene(scene.name);
+        }
         if (is_damage)
         {
             if (current_blink % 6 <= 4)
@@ -123,6 +134,9 @@ public class HealthBar : MonoBehaviour
   private void dead()
   {
         //player.transform.position = start_point;
-        SceneManager.LoadScene(scene.name);
-  }
+        is_dead = true;
+        death_UI.SetActive(true);
+        dead_audio.Play();
+
+    }
 }

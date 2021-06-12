@@ -11,6 +11,7 @@ public class FiniteStateMachine : MonoBehaviour
     private bool onGround;
     private int SpeedAchievedOnFall;
     private int PrevAnimation;
+    private GameObject[] interactables;
 
     [SerializeField] private int highSpeed;
     [SerializeField] private int mortalSpeed;
