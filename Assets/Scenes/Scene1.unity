@@ -6583,6 +6583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597933735}
   - component: {fileID: 597933736}
+  - component: {fileID: 597933737}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -6627,6 +6628,24 @@ MonoBehaviour:
   objects:
   - {fileID: 437044415}
   - {fileID: 2110523711}
+  portal: {fileID: 86117315}
+  collectMask: {fileID: 1006692911}
+--- !u!114 &597933737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597933734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a444a7fae4dbd44280e9cec42dc6b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 437044415}
+  - {fileID: 2110523711}
+  - {fileID: 0}
   portal: {fileID: 86117315}
   collectMask: {fileID: 1006692911}
 --- !u!1 &614560723

@@ -7519,6 +7519,9 @@ MonoBehaviour:
   regenDelay: 0.03
   regenAmount: 1
   HealthPotion: 20
+  death_UI: {fileID: 0}
+  death_time_remain: 3
+  dead_audio: {fileID: 0}
 --- !u!114 &1426733437
 MonoBehaviour:
   m_ObjectHideFlags: 0
