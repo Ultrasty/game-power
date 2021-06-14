@@ -1449,7 +1449,7 @@ MonoBehaviour:
   - {fileID: 437044415}
   - {fileID: 2110523711}
   portal: {fileID: 86117315}
-  collectMask: {fileID: 0}
+  collectMask: {fileID: 1238059308}
 --- !u!114 &597933737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   - {fileID: 2110523711}
   - {fileID: 0}
   portal: {fileID: 86117315}
-  collectMask: {fileID: 0}
+  collectMask: {fileID: 1238059308}
 --- !u!1 &614560723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +2909,7 @@ GameObject:
   - component: {fileID: 963156769}
   m_Layer: 9
   m_Name: Dust
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7744,7 +7744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1977224569}
-  mask_img: {fileID: 0}
+  mask_img: {fileID: 1238059310}
 --- !u!1 &998951347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9418,7 +9418,7 @@ GameObject:
   - component: {fileID: 1717435757}
   m_Layer: 9
   m_Name: AttackHitBox
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

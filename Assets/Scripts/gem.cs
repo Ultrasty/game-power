@@ -20,7 +20,7 @@ public class gem : MonoBehaviour
     }
     private void OnDestroy()
     {
-        mask_img.gameObject.SetActive(false);
         anim.SetBool("isKey", true);
+        mask_img.gameObject.SetActive(false);      
     }
 }

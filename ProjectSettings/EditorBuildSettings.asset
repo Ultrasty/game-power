@@ -4,37 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3ec7c42c6786f3c4ebc85caf535fb0f5
-  - enabled: 0
-    path: Assets/Scenes/PreGame.unity
-    guid: 3ce17afdc315b9c4e8e2607b0b6359c4
-  - enabled: 1
-    path: Assets/Scenes/Scene1.unity
-    guid: 4e0b716b7a8d14a4e8a588f4b172b978
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/Scene2.unity
-    guid: b9fa5678ff6acc1428163ac270c3ae23
-  - enabled: 1
-    path: Assets/Scenes/Test/GjhTestScen.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Test/MainMenu_With_Particles.unity
-    guid: 7416cda19c157f3418a74d405ceea985
-=======
-    path: Assets/Scenes/Scene2.0.unity
-    guid: 12d0783a52cf9ea4182073a19d297094
-  - enabled: 0
-    path: Assets/Scenes/Scene2.1.unity
-    guid: 9cc2802c76d045547ba9463e9d7b23dd
-  - enabled: 0
-    path: Assets/Scenes/Scene2.2.unity
-    guid: 054d697bd2cb91d479dd874eb6404d5c
-  - enabled: 0
-    path: Assets/Scenes/Scene3.unity
-    guid: 17ee12773dd3f1b4a865b65400161c45
->>>>>>> 0c2911b9fb2f1f5662cbc7857b8db0e8d59f3d54
+  m_Scenes: []
   m_configObjects: {}
