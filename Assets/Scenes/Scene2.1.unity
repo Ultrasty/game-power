@@ -1511,7 +1511,7 @@ GameObject:
   - component: {fileID: 522320977}
   m_Layer: 9
   m_Name: AttackHitBox
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3012,7 +3012,7 @@ GameObject:
   - component: {fileID: 1681879282}
   m_Layer: 9
   m_Name: Dust
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8585,6 +8585,9 @@ MonoBehaviour:
   regenDelay: 0.03
   regenAmount: 1
   HealthPotion: 20
+  death_UI: {fileID: 0}
+  death_time_remain: 3
+  dead_audio: {fileID: 0}
 --- !u!114 &2131485716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8609,6 +8612,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcbd8c2d7fc6864fa292f36f8c11c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead_audio: {fileID: 0}
+  death_UI: {fileID: 0}
+  death_time_remain: 3
 --- !u!114 &2131485718
 MonoBehaviour:
   m_ObjectHideFlags: 0
