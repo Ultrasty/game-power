@@ -7920,7 +7920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dead_audio: {fileID: 336660571}
-  death_UI: {fileID: 0}
+  death_UI: {fileID: 497555751}
   death_time_remain: 3
 --- !u!114 &1426733439
 MonoBehaviour:
@@ -8734,7 +8734,7 @@ GameObject:
   - component: {fileID: 1790818432}
   - component: {fileID: 1790818431}
   m_Layer: 5
-  m_Name: HUD (1)
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
