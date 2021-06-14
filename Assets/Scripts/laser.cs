@@ -11,7 +11,7 @@ public class laser : MonoBehaviour
     void Start()
     {
         isBeam = true;
-        InvokeRepeating("damage", 2f, 1f);
+        InvokeRepeating("damage", 2f, 2f);
     }
 
     // Update is called once per frame

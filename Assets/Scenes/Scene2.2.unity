@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 81126876}
   m_Layer: 9
   m_Name: Dust
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5840,8 +5840,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1485232533}
-  - {fileID: 1405032863}
   - {fileID: 1344966712}
+  - {fileID: 1405032863}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6536,7 +6536,7 @@ GameObject:
   - component: {fileID: 963115774}
   m_Layer: 9
   m_Name: AttackHitBox
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6911,6 +6911,9 @@ MonoBehaviour:
   regenDelay: 0.03
   regenAmount: 1
   HealthPotion: 20
+  death_UI: {fileID: 0}
+  death_time_remain: 3
+  dead_audio: {fileID: 0}
 --- !u!114 &1310524888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6935,6 +6938,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcbd8c2d7fc6864fa292f36f8c11c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead_audio: {fileID: 0}
+  death_UI: {fileID: 0}
+  death_time_remain: 3
 --- !u!114 &1310524890
 MonoBehaviour:
   m_ObjectHideFlags: 0
