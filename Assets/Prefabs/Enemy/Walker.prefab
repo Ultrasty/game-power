@@ -189,7 +189,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7824473968847638274}
-  - component: {fileID: 1147061844998814667}
+  - component: {fileID: 3312804864991241138}
+  - component: {fileID: 637732054614572564}
   m_Layer: 13
   m_Name: WalkerAttack
   m_TagString: Untagged
@@ -211,8 +212,8 @@ Transform:
   m_Father: {fileID: 7955357263754752810}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1147061844998814667
-PolygonCollider2D:
+--- !u!61 &3312804864991241138
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -224,7 +225,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.6691122, y: -0.40709972}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -234,11 +235,21 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.052949, y: 0.39321566}
-      - {x: 1.1838737, y: -0.22830248}
-      - {x: 2.3327184, y: -0.42269346}
-      - {x: 2.4461355, y: -0.70193756}
-      - {x: 2.8007636, y: -0.66624403}
-      - {x: 2.7535634, y: -0.29776722}
+  serializedVersion: 2
+  m_Size: {x: 2.139883, y: 1.8141994}
+  m_EdgeRadius: 0
+--- !u!114 &637732054614572564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243764260785645597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50aa98e5d36e8481db7921a8e06f0c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 512

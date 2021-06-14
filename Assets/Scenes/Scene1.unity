@@ -948,18 +948,6 @@ Transform:
   m_Father: {fileID: 1429113006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &437044415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5127484610145994728, guid: c50034ff194b844f1bdaeedda09f38b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 731589370}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &437044416 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8897896584788491046, guid: c50034ff194b844f1bdaeedda09f38b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 731589370}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &438972177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1029,12 @@ Transform:
   m_Father: {fileID: 761639500}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &447082972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2284118381905624977, guid: c50034ff194b844f1bdaeedda09f38b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 731589370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &504016054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 437044415}
+  - {fileID: 0}
   - {fileID: 2110523711}
   portal: {fileID: 86117315}
   collectMask: {fileID: 1238059308}
@@ -1463,7 +1457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 437044415}
+  - {fileID: 0}
   - {fileID: 2110523711}
   - {fileID: 0}
   portal: {fileID: 86117315}
@@ -1495,7 +1489,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 437044416}
+  - {fileID: 447082972}
   - {fileID: 2110523717}
   m_Father: {fileID: 2061122156}
   m_RootOrder: 1

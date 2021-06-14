@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dog_Attack_HitBox : MonoBehaviour
 {
-  
   [SerializeField] private LayerMask layer;
   private DogController dog;
   private Collider2D col;
@@ -22,6 +21,7 @@ public class Dog_Attack_HitBox : MonoBehaviour
     {
       // get player's health bar script and TakeDamage()
       player = GameObject.Find("Player");
+      Debug.Log("Start to Attack");
       player.BroadcastMessage("TakeDamage", dog.attackDamage);
     }
   }
