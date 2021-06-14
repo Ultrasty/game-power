@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Flyer2AttckHitbox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private LayerMask layer;
+    private Flyer2Controller flyer2;
+    private Collider2D col;
+    private GameObject player;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        flyer2 = GameObject.Find("Flyer2").GetComponent<Flyer2Controller>();
+        col = GetComponent<Collider2D>();
+    }
+    /*
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.transform.name == "Player")
+        {
+            // get player's health bar script and TakeDamage()
+            HealthBar player = col.gameObject.GetComponent<HealthBar>();
+            player.TakeDamage(flyer.attackDamage);
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.transform.name == "Player")
+        {
+            // get player's health bar script and TakeDamage()
+            player = GameObject.Find("Player");
+            Debug.Log("start to attack");
+            player.BroadcastMessage("TakeDamage", flyer2.attackDamage);
+        }
     }
 }

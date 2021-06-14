@@ -125,7 +125,7 @@ public class Flyer2Controller : MonoBehaviour
         if (myAttackTimer >= attackInterval)
         {
             myAttackTimer = 0f;
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             myAnimator.SetBool("Attack", true);
         }
     }
