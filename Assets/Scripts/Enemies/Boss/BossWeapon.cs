@@ -13,7 +13,6 @@ public class BossWeapon : MonoBehaviour
   public AudioSource attackSource;
   public AudioSource enragedAttackSource;
   public Transform enemyFirePoint;
-  public GameObject enemyBulletPrefab;
 
   public void Attack()
   {

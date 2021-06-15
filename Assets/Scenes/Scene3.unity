@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e9f5984928512439099282dff0be7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 84089846}
   isFlipped: 0
 --- !u!61 &332291102
 BoxCollider2D:
@@ -3053,7 +3053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e9f5984928512439099282dff0be7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1810564091}
   isFlipped: 0
 --- !u!61 &1506998239
 BoxCollider2D:
@@ -3176,8 +3176,6 @@ MonoBehaviour:
   attackSource: {fileID: 1506998245}
   enragedAttackSource: {fileID: 1506998246}
   enemyFirePoint: {fileID: 335480637}
-  enemyBulletPrefab: {fileID: 4759996069035803796, guid: 9a891af3fe0af5e4d9d772da60b99e72,
-    type: 3}
 --- !u!82 &1506998245
 AudioSource:
   m_ObjectHideFlags: 0
