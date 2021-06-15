@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -229,7 +229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -818.3, y: -400.1}
+  m_AnchoredPosition: {x: -818.3, y: -346.86002}
   m_SizeDelta: {x: 283.41296, y: 279.73297}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &56769607
@@ -8930,7 +8930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -541.58, y: -397.24}
+  m_AnchoredPosition: {x: -541.58, y: -344}
   m_SizeDelta: {x: 270.027, y: 274.01694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924726356
@@ -9454,9 +9454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93eab3bb0b8bfb3459d8be3acb50038e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1
-  time: 1.02
-  startTime: 0.2
 --- !u!212 &3975395987383178076
 SpriteRenderer:
   m_ObjectHideFlags: 0
