@@ -10,6 +10,7 @@ public class BossHealth : MonoBehaviour
   public GameObject deathEffect;
 
   public bool isInvulnerable = false;
+  public AudioSource deathAudio;
 
   public void TakeDamage()
   {
@@ -31,8 +32,11 @@ public class BossHealth : MonoBehaviour
 
   void Die()
   {
+    deathAudio.Play();
     Instantiate(deathEffect, transform.position, Quaternion.identity);
     Destroy(gameObject);
+    //AudioSource.PlayClipAtPoint(deathAudio, transform.position);
+
   }
 
 }
