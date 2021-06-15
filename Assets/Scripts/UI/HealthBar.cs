@@ -94,7 +94,7 @@ public class HealthBar : MonoBehaviour
 
   public void TakeDamage(float amount)
   {
-    sickAudio.Play();
+
     // Verifica se tem vida suficiente para realizar a acao
     if (player.GetComponent<FiniteStateMachine>().state == FiniteStateMachine.State.blocking)
     {
@@ -110,6 +110,10 @@ public class HealthBar : MonoBehaviour
       if (currentHealth <= 0)
       {
         dead();
+      }
+      else
+      {
+        sickAudio.Play();
       }
       // atualiza o valor na barra
     }
