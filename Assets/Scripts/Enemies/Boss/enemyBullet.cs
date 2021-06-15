@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class enemyBullet : MonoBehaviour
 {
-    public float speed = 20f;
-    public int damage;
-    public Rigidbody2D rb;
-    public GameObject impactEffect;
+  public float speed = 20f;
+  public float damage;
+  public Rigidbody2D rb;
+  public GameObject impactEffect;
+  // Use this for initialization
+  void Start()
+  {
+    rb.velocity = -transform.right * speed;
 
-    // Use this for initialization
-    void Start()
+  }
+
+  void OnTriggerEnter2D(Collider2D hitInfo)
+  {
+    Debug.Log("OnTriggerEnter:" + hitInfo.transform.name);
+
+    if (hitInfo.transform.name == "Player")
     {
-        rb.velocity = -transform.right * speed;
+      Instantiate(impactEffect, transform.position, transform.rotation);
+      Destroy(gameObject);
+      HealthBar player = hitInfo.GetComponent<HealthBar>();
+      player.TakeDamage(damage);
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        HealthBar player = hitInfo.GetComponent<HealthBar>();
-        if (player != null)
-        {
-            player.TakeDamage(damage);
-        }
 
-        Instantiate(impactEffect, transform.position, transform.rotation);
-
-        Destroy(gameObject);
-    }
+  }
 
 }

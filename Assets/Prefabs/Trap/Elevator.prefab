@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400002}
   - component: {fileID: 9500000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 21200000}
   - component: {fileID: 6100000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformSlim
   m_TagString: Untagged
   m_Icon: {fileID: 0}

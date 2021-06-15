@@ -2,46 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyerAttack : MonoBehaviour
+public class FlyerAttack : StateMachineBehaviour
 {
-    [SerializeField] public float attackDamage = 1.0f;
-    public float time;
-    public float startTime;
-    private Animator anim;
-    private PolygonCollider2D col;
-    private GameObject player;
+    FlyerController flyer;
+    Transform player;
+    Rigidbody2D rb;
 
-    private void Start()
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        anim = GameObject.Find("Flyer").GetComponent<Animator>();
-        col = GetComponent<PolygonCollider2D>();
-    }
-    private void FixedUpdate()
-    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        flyer = animator.GetComponent<FlyerController>();
+        rb = animator.GetComponent<Rigidbody2D>();
     }
 
-    public void Attack()
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        anim.SetBool("Attack", true);
-        StartCoroutine(disableHitBox());
-    }
-    IEnumerator startAttack()
-    {
-        yield return new WaitForSeconds(startTime);
-        col.enabled = true;
-        StartCoroutine(disableHitBox());
-    }
-    IEnumerator disableHitBox()
-    {
-        yield return new WaitForSeconds(time);
-        col.enabled = false;
+        // flip dog to face player
+        //flyer.LookAtPlayer();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.GetComponent<HealthBar>().TakeDamage(attackDamage);
-        }
+
     }
 }

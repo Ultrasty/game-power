@@ -6,7 +6,8 @@ public class AttackHitBox : MonoBehaviour
 {
     Collider2D collider;
     GameObject player;
-    private AudioSource audioSource;
+    public AudioSource block_source;
+    public AudioSource attack_source;
     public bool is_play = false;
     private float track_length;
     public float remain;
@@ -15,8 +16,7 @@ public class AttackHitBox : MonoBehaviour
     {
       collider = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        audioSource = player.GetComponent<AudioSource>();
-        track_length = audioSource.clip.length;
+        
         remain = track_length;
         is_play = false;
     }
@@ -31,14 +31,15 @@ public class AttackHitBox : MonoBehaviour
         {
             if (collider.gameObject.tag == "Prop" || collider.gameObject.tag == "Enemy")
             {
+                attack_source.Play();
                 collider.gameObject.BroadcastMessage("TakeDamage");
             }
         }
-        else
+        else if(player.GetComponent<FiniteStateMachine>().state == FiniteStateMachine.State.blocking)
         {
             if (collider.gameObject.tag == "Prop" || collider.gameObject.tag == "Enemy")
             {
-                audioSource.Play();
+                block_source.Play();
             }
             
 

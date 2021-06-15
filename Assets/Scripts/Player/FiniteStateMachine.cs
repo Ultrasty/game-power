@@ -11,6 +11,7 @@ public class FiniteStateMachine : MonoBehaviour
     private bool onGround;
     private int SpeedAchievedOnFall;
     private int PrevAnimation;
+    private GameObject[] interactables;
 
     [SerializeField] private int highSpeed;
     [SerializeField] private int mortalSpeed;
@@ -59,9 +60,12 @@ public class FiniteStateMachine : MonoBehaviour
       // falling
       else if(rb.velocity.y < -0.1f)
       {
-        state = State.falling;
-        TrackSpeedOnFall();
-        PrevAnimation = (int)state;
+            if (up_down_inter())
+            {
+                state = State.falling;
+                TrackSpeedOnFall();
+                PrevAnimation = (int)state;
+            }
       }
       else if(PrevAnimation == 4)
       {
@@ -145,5 +149,25 @@ public class FiniteStateMachine : MonoBehaviour
     public void ExitLanding()
     {
       state = State.emptyState;
+    }
+
+    private bool up_down_inter()
+    {
+        GameObject[] up_downs = GameObject.FindGameObjectsWithTag("Updown");
+        foreach(GameObject up_down in up_downs)
+        {
+            float player_center_x = GetComponent<Collider2D>().bounds.center.x;
+            float player_center_y = GetComponent<Collider2D>().bounds.center.y;
+            float center_x = up_down.GetComponent<Collider2D>().bounds.center.x;
+            float center_y = up_down.GetComponent<Collider2D>().bounds.center.y;
+            if(Mathf.Abs(player_center_x - center_x)<up_down.GetComponent<Collider2D>().bounds.size.x/2)
+            {
+                if(Mathf.Abs(player_center_y-center_y)< up_down.GetComponent<Collider2D>().bounds.size.y*10)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
