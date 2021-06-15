@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] Boss; 
+    public GameObject[] Boss;
+    public GameObject Canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
         }
         if(isWin)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Canvas.SetActive(true);
         }
     }
 }
