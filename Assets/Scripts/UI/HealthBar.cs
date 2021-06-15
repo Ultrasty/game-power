@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
   public float death_time_remain = 3f;
   private bool is_dead = false;
   public AudioSource dead_audio;
-
+  public AudioSource sickAudio;
   // micro delay no recharge rate
   private WaitForSeconds regenTick;
   private float currentHealth;
@@ -94,7 +94,7 @@ public class HealthBar : MonoBehaviour
 
   public void TakeDamage(float amount)
   {
-
+    sickAudio.Play();
     // Verifica se tem vida suficiente para realizar a acao
     if (player.GetComponent<FiniteStateMachine>().state == FiniteStateMachine.State.blocking)
     {
