@@ -115,7 +115,7 @@ public class HealthBar : MonoBehaviour
     }
   }
 
-  private IEnumerator Heal(float amount)
+  public IEnumerator Heal(float amount)
   {
     float targetHP = currentHealth + amount;
     if (targetHP > maxHealth)
