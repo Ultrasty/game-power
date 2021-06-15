@@ -8153,7 +8153,7 @@ GameObject:
   - component: {fileID: 1441711728}
   - component: {fileID: 1441711729}
   m_Layer: 13
-  m_Name: GameObject
+  m_Name: iceBossWalkSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

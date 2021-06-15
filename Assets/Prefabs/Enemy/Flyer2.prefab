@@ -243,12 +243,12 @@ MonoBehaviour:
   trackSpeed: 3
   searchRadius: 7.11
   loseRadius: 8.56
-  attackRadius: 2
+  attackRadius: 4
   searchLayer:
     serializedVersion: 2
     m_Bits: 512
   destroyable: 1
-  attackDamage: 2
+  attackDamage: 10
   collectObject: {fileID: 0}
   playerTransform: {fileID: 0}
   attackInterval: 1
