@@ -14,7 +14,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Boss.Length == 0)
+        bool isWin = true;
+        for(int i = 0; i < Boss.Length; i++)
+        {
+            if(Boss[i] != null){
+                isWin = false;
+            }
+        }
+        if(isWin)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
