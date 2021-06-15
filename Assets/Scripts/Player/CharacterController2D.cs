@@ -61,7 +61,7 @@ public class CharacterController2D : MonoBehaviour
         {
             duplicate_time_remain -= Time.deltaTime;
             dup_mask.fillAmount = (duplicate_time_length-duplicate_time_remain) / duplicate_time_length;
-            if(duplicate_time_remain<=0||Input.GetKeyDown(KeyCode.C))
+            if(duplicate_time_remain<=0||Input.GetKeyDown(KeyCode.K))
             {
                 Destroy(GameObject.FindGameObjectWithTag("Dup"));
                 have_duplicate = false;
@@ -77,7 +77,7 @@ public class CharacterController2D : MonoBehaviour
                 duplicate_time_cd_remain -= Time.deltaTime;
                 dup_mask.fillAmount = duplicate_time_cd_remain / duplicate_time_cd;
             }
-            if(Input.GetKeyDown(KeyCode.C))
+            if(Input.GetKeyDown(KeyCode.K))
             {
                 have_duplicate = true;
                 GameObject dup = Instantiate(dupPrefab, transform.GetChild(1));
@@ -90,7 +90,7 @@ public class CharacterController2D : MonoBehaviour
         {
             bullet_time_remain -= Time.deltaTime;
             time_mask.fillAmount = (bullet_time_length-bullet_time_remain) / bullet_time_length;
-            if (Input.GetKeyDown(KeyCode.Z) || bullet_time_remain <= 0)
+            if (Input.GetKeyDown(KeyCode.J) || bullet_time_remain <= 0)
             {
                 Time.timeScale = 1f;
                 
@@ -114,7 +114,7 @@ public class CharacterController2D : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.J))
                 {
                     Time.timeScale = 0.3f;
                     bulletTime = true;

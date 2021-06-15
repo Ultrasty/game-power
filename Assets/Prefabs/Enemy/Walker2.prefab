@@ -249,6 +249,7 @@ MonoBehaviour:
     m_Bits: 512
   destroyable: 1
   attackDamage: 10
-  collectObject: {fileID: 0}
+  collectObject: {fileID: 6650512387427800334, guid: 3dada1b012d7df44da241d852f937355,
+    type: 3}
   playerTransform: {fileID: 0}
   attackInterval: 1
