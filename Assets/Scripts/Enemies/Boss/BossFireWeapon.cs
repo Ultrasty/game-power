@@ -9,7 +9,8 @@ public class BossFireWeapon : MonoBehaviour
   public Vector3 attackOffset;
   public float attackRange = 1f;
   public LayerMask attackMask;
-
+  public AudioSource attackSource;
+  public AudioSource enragedAttackSource;
   public Transform enemyFirePoint;
   public GameObject enemyBulletPrefab;
 
@@ -18,7 +19,7 @@ public class BossFireWeapon : MonoBehaviour
     Vector3 pos = transform.position;
     pos += transform.right * attackOffset.x;
     pos += transform.up * attackOffset.y;
-
+    attackSource.Play();
     Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
     if (colInfo != null)
     {
@@ -30,6 +31,7 @@ public class BossFireWeapon : MonoBehaviour
 
   public void EnragedAttack()
   {
+    enragedAttackSource.Play();
     Instantiate(enemyBulletPrefab, enemyFirePoint.position, enemyFirePoint.rotation);
   }
 

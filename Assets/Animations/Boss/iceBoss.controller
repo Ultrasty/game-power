@@ -513,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   attackRange: 5
+  walkSource: {fileID: 0}
 --- !u!1101 &5434276662481778763
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -581,6 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   attackRange: 5
+  walkSource: {fileID: 0}
 --- !u!1101 &6948286953126898512
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

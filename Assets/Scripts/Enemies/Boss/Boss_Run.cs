@@ -7,7 +7,7 @@ public class Boss_Run : StateMachineBehaviour
 
   public float speed = 2.5f;
   public float attackRange = 3f;
-
+  // public AudioSource walkSource;
   Transform player;
   Rigidbody2D rb;
   Boss boss;
@@ -18,7 +18,7 @@ public class Boss_Run : StateMachineBehaviour
     player = GameObject.FindGameObjectWithTag("Player").transform;
     rb = animator.GetComponent<Rigidbody2D>();
     boss = animator.GetComponent<Boss>();
-
+    // walkSource.Play();
   }
 
   // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
