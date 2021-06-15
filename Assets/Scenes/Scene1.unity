@@ -1699,7 +1699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 72cb707a3e6473144880cd90e91d22d7, type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Updown
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 72cb707a3e6473144880cd90e91d22d7, type: 3}
       propertyPath: m_RootOrder
@@ -11173,7 +11173,7 @@ GameObject:
   - component: {fileID: 1977224570}
   m_Layer: 8
   m_Name: v-truck
-  m_TagString: Interactable
+  m_TagString: Updown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

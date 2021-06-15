@@ -12,6 +12,7 @@ TagManager:
   - Map
   - Pickable
   - Interactable
+  - Updown
   layers:
   - Default
   - TransparentFX
