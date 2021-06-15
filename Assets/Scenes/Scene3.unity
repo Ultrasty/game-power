@@ -394,7 +394,7 @@ MonoBehaviour:
   dup_mask: {fileID: 1236432114}
   bulletPrefab: {fileID: 258299026209727350, guid: 182228c461d0fed498d2bb9246106642,
     type: 3}
-  dupPrefab: {fileID: 1696618520890452757, guid: 80dde339f6593e54f8d4b79796be86b9,
+  dupPrefab: {fileID: 1352246759443996769, guid: 0f4ade75ce1a77a46b9eedbb27f838f3,
     type: 3}
   pool: {fileID: 0}
   bulletTime: 0
