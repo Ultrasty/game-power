@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1244,7 +1244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 508795597}
-  - {fileID: 1220213355}
   portal: {fileID: 1039869713}
   collectMask: {fileID: 0}
 --- !u!1 &603216552
@@ -1349,7 +1348,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 508795598}
-  - {fileID: 1220213361}
   m_Father: {fileID: 2061122156}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1800,80 +1798,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1198609170}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1055150413
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 614560724}
-    m_Modifications:
-    - target: {fileID: 5718759389276224416, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Flyer2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 19.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 65.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718759389276224442, guid: b2427af556288574d83e25aeab2843f2,
-        type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 593022095}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2427af556288574d83e25aeab2843f2, type: 3}
 --- !u!1001 &1058208964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2177,18 +2101,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e3c32aa73aebf4fb34adb36b2ae8f6, type: 3}
---- !u!1 &1220213355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5718759389276224416, guid: b2427af556288574d83e25aeab2843f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1055150413}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1220213361 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5718759389276224421, guid: b2427af556288574d83e25aeab2843f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1055150413}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1251337222
 GameObject:
   m_ObjectHideFlags: 0

@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e154a4aedcc87418e1c2bbbc4b6c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoints: 1
+  HealthPoints: 2
   speed: 2
   patrolRadius: 3
   trackSpeed: 3

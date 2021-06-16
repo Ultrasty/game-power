@@ -5,19 +5,13 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
 
-  public int health = 500;
-
+  public int health;
   public GameObject deathEffect;
-
-  public bool isInvulnerable = false;
+  public AudioSource deathAudio;
 
   public void TakeDamage()
   {
-    if (isInvulnerable)
-      return;
-
     health -= 20;
-    Debug.Log(health);
     if (health <= 100)
     {
       GetComponent<Animator>().SetBool("IsEnraged", true);
@@ -31,8 +25,11 @@ public class BossHealth : MonoBehaviour
 
   void Die()
   {
+    deathAudio.Play();
     Instantiate(deathEffect, transform.position, Quaternion.identity);
     Destroy(gameObject);
+    //AudioSource.PlayClipAtPoint(deathAudio, transform.position);
+
   }
 
 }
