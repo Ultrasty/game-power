@@ -17,7 +17,6 @@ public class enemyBullet : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D hitInfo)
   {
-    Debug.Log("OnTriggerEnter:" + hitInfo.transform.name);
 
     if (hitInfo.transform.name == "Player")
     {
